@@ -17,7 +17,7 @@ module Kirpich
     end
 
     def can_respond?(data)
-      data['subtype'] != 'bot_message' && data['subtype'] != 'message_changed' && data['user'] != 'U081B2XCP' && data.key?('text') && !data['text'].empty?
+      data['subtype'] != 'bot_message' && data['subtype'] != 'message_changed' && data['user'] != 'U08AK2AK0' && data.key?('text') && !data['text'].empty?
     end
 
     def on_message(data)

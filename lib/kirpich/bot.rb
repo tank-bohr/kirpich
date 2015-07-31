@@ -24,6 +24,8 @@ module Kirpich
       return unless can_respond?(data)
       p "Recived: [" + data['text'] + "]"
 
+      return if 'C02D4ADR8' == data['channel']
+
       result = select_text(data)
       if result
         if (result.is_a?(Array))

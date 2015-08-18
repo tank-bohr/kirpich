@@ -205,7 +205,7 @@ module Kirpich
     def on_hello
       p "I am ok"
       random_post
-      random_post_timer
+      # random_post_timer
     end
   end
 end

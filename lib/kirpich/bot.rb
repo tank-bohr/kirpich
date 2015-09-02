@@ -17,14 +17,17 @@ module Kirpich
     end
 
     def can_respond?(data)
-      data['subtype'] != 'bot_message' && data['subtype'] != 'message_changed' && data['user'] != 'U08AK2AK0' && data.key?('text') && !data['text'].empty?
+      data['subtype'] != 'bot_message'\
+        && data['subtype'] != 'message_changed'\
+        && data['user'] != 'U08AK2AK0'\
+        && data.key?('text')\
+        && !data['text'].empty?\
+        && data['channel'] != 'C02D4ADR8'
     end
 
     def on_message(data)
       return unless can_respond?(data)
       p "Recived: [" + data['text'] + "]"
-
-      return if 'C02D4ADR8' == data['channel']
 
       result = select_text(data)
       if result

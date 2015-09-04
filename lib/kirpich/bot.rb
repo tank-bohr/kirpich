@@ -129,6 +129,8 @@ module Kirpich
         result = answer(:cat_image)
       elsif text.clean =~ /(правила)/i
         result = answer(:rules_text)
+      elsif text.clean =~ /(🚒)/i
+        result = answer("@key чини давай")
       elsif text.clean =~ /(.*?,)?(.*?)\sили\s(.*?)$/i
         options_match = text.clean.scan(/(.*?,)?(.*?)\sили\s(.*?)$/)
         result = if options_match.any?
